@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run start:dev",
     "start:dev": "cross-env NODE_ENV=development parcel serve ./src/index.html --https",
-    "build": "rm -rf ./dist && cross-env NODE_ENV=production parcel build ./src/index.html",
+    "build": "rm -rf ./dist && cross-env NODE_ENV=production parcel build ./src/index.html --public-url ./",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
