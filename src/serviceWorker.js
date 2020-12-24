@@ -1,17 +1,16 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import { version } from '../package.json';
 
-const staticAssets = ["./"];
+const staticAssets = ['./'];
 
-self.addEventListener("install", async (event) => {
+self.addEventListener('install', async (event) => {
   event.waitUntil(
-    caches.open("v1").then(function (cache) {
+    caches.open(version).then(function (cache) {
       return cache.addAll(staticAssets);
     })
   );
 });
 
-self.addEventListener("fetch", function (event) {
+self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
       // caches.match() always resolves
@@ -25,7 +24,7 @@ self.addEventListener("fetch", function (event) {
           // and serve second one
           let responseClone = response.clone();
 
-          caches.open("v1").then(function (cache) {
+          caches.open(version).then(function (cache) {
             if (!/^https?:$/i.test(new URL(event.request.url).protocol)) return;
 
             cache.put(event.request, responseClone);

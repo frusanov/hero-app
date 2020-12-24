@@ -51,7 +51,6 @@ export default function App() {
   }, [currentState.value]);
 
   useEffect(() => {
-    console.log(contentRef);
     window.addEventListener('scroll', () => {
       setAppBarShadow(!!window.pageYOffset);
     });

@@ -167,7 +167,7 @@ const machine = createMachine(
             });
           } catch (err) {}
         } else {
-          navigator.clipboard.writeText(text);
+          window.navigator.clipboard.writeText(text);
         }
       },
       save({ feats, bullet }) {

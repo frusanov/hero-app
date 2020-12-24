@@ -10,10 +10,14 @@ const engine = new Styletron();
 
 if ('serviceWorker' in navigator && process.env.NODE_ENV !== 'development') {
   try {
-    navigator.serviceWorker.register('./serviceWorker.js');
-    console.log('Service Worker Registered');
+    navigator.serviceWorker.register('./serviceWorker.js').then((reg) => {
+      reg.addEventListener('updatefound', () => {
+        reg.update();
+      });
+    });
+    console.debug('Service Worker Registered');
   } catch (error) {
-    console.log('Service Worker Register Failed');
+    console.error('Service Worker Register Failed', error);
   }
 }
 
