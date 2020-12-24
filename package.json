@@ -42,7 +42,7 @@
   "pwaManifest": {
     "name": "Hero App",
     "shortName": "Hero App",
-    "startURL": "./",
+    "startURL": "./index.html",
     "theme": "#ffffff",
     "generateIconOptions": {
       "baseIcon": "./src/assets/logo.svg",
