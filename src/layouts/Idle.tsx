@@ -22,7 +22,7 @@ export default function Idle() {
           text="Do you really want to delete selected feats?"
           acceptBg="danger700"
           acceptText="Delete"
-          onCancel={() => sendEvent('CANCEL')}
+          onCancel={() => sendEvent('BACK')}
           onAccept={() => sendEvent('REMOVE')}
         />
       )}

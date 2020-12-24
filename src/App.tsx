@@ -26,11 +26,27 @@ export default function App() {
   const isLayout = (value) => currentState.value === value;
 
   useEffect(() => {
-    sendEvent('RESOLVE');
-  }, []);
+    const onPopState = function (e) {
+      if (e.state.event === currentState?.history?.event?.type) {
+        sendEvent('BACK');
+      }
+    };
+
+    window.addEventListener('popstate', onPopState);
+
+    return function () {
+      window.removeEventListener('popstate', onPopState);
+    };
+  }, [currentState.value]);
 
   useEffect(() => {
-    console.log(currentState);
+    window.history.pushState(
+      {
+        value: currentState.value,
+        event: currentState.event.type,
+      },
+      null
+    );
   }, [currentState.value]);
 
   return (

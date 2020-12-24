@@ -24,7 +24,7 @@ const machine = createMachine(
     context: {
       feats: [],
       selected: new Set(),
-      bullet: '✨',
+      bullet: '',
     },
     states: {
       restore: {
@@ -94,7 +94,7 @@ const machine = createMachine(
             target: 'idle',
             actions: ['remove', 'save', 'deselectAll'],
           },
-          CANCEL: 'idle',
+          BACK: 'idle',
         },
       },
       share: {
