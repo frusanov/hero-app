@@ -26,7 +26,7 @@ const appBarData = {
   },
 };
 
-export default function AppBar() {
+export default function AppBar({ shadow }) {
   const [currentState, sendEvent] = useService(service);
   const stateValue: string = currentState?.value.toString();
   const title: string = appBarData[stateValue]?.title || appBarData.idle.title;
@@ -36,10 +36,15 @@ export default function AppBar() {
     <Div
       bg="white"
       d="flex"
-      pos="sticky"
+      pos="fixed"
+      top="0"
+      left="0"
+      right="0"
       align="center"
       p="1rem 0"
       style={{ zIndex: '1' }}
+      shadow={shadow}
+      transition
     >
       <Container d="flex" flexDir="row" align="center">
         {/^(idle|remove)$/.test(stateValue) ? (

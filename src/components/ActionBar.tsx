@@ -54,7 +54,17 @@ export default function ActionBar() {
   }, [selected.size]);
 
   return (
-    <Div pos="fixed" bottom="1.5rem" left="0" right="0">
+    <Div
+      pos="fixed"
+      bottom="0"
+      left="0"
+      right="0"
+      p={{ t: '0.5rem', b: '1.5rem' }}
+      style={{
+        background:
+          'linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0.5) 75%, rgba(255,251,251,0) 100%)',
+      }}
+    >
       <Container d="flex" flexDir="row" justify="space-around">
         {currentActions &&
           currentActions.map((action, index) => (

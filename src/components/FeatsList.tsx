@@ -27,7 +27,7 @@ export default function FeatsList() {
   }, [currentState.context['selected'].size]);
 
   return (
-    <React.Fragment>
+    <Div p={{ b: '96px' }}>
       {feats.map((feat, index) => (
         <Div
           p="1em 0"
@@ -53,6 +53,6 @@ export default function FeatsList() {
           </Container>
         </Div>
       ))}
-    </React.Fragment>
+    </Div>
   );
 }
