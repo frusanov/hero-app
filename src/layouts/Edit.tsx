@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useService } from '@xstate/react';
 import { service } from '../stateMachine';
 
-import { Container, Textarea, Button } from 'atomize';
+import { Container, Textarea, Button, Text } from 'atomize';
 
 export default function Edit(props) {
   const [currentState, sendEvent] = useService(service);
@@ -24,6 +24,7 @@ export default function Edit(props) {
       <Textarea
         shadow="4"
         fontFamily="primary"
+        textSize="subheader"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
@@ -36,7 +37,7 @@ export default function Edit(props) {
           text.length && sendEvent('UPDATE', { text, date: selectedDate })
         }
       >
-        Save
+        <Text textSize="subheader">Save</Text>
       </Button>
     </Container>
   );

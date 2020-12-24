@@ -18,11 +18,12 @@ export default function Settings() {
 
   return (
     <Container d="flex" flexDir="column" justify="flex-end">
-      <Text textSize="caption" textColor="gray900">
+      <Text textSize="paragraph" textColor="gray900">
         Feats list bullet:
       </Text>
       <Input
         fontFamily="primary"
+        textSize="subheader"
         placeholder="Enter your favorite emoji"
         value={bullet}
         onChange={updateBullet}

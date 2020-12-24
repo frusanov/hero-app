@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useContext } from 'react';
 
-import { Div, Container, Button, Image } from 'atomize';
+import { Div, Container, Button, Image, Text } from 'atomize';
 import { ArrowLeftShort } from 'react-bootstrap-icons';
 
 import { ThemeContext } from 'atomize/dist/core/ThemeContext';
@@ -66,7 +66,9 @@ export default function AppBar() {
           </Button>
         )}
 
-        <h1>{title}</h1>
+        <Text textSize="title" textWeight="600">
+          {title}
+        </Text>
       </Container>
     </Div>
   );

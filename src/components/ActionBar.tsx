@@ -31,7 +31,7 @@ const actionsSets = {
     new Action({ title: 'Back', icon: 'LeftArrow', event: 'DESELECT_ALL' }),
     new Action({
       title: 'Select All',
-      icon: <CheckAll size="20px" style={{ color: theme.colors.info700 }} />,
+      icon: <CheckAll size="1.5rem" style={{ color: theme.colors.info700 }} />,
       event: 'SELECT_ALL',
     }),
     new Action({ title: 'Delete', icon: 'Delete', event: 'REMOVE' }),
@@ -54,13 +54,13 @@ export default function ActionBar() {
   }, [selected.size]);
 
   return (
-    <Div pos="fixed" bottom="1.5em" left="0" right="0">
+    <Div pos="fixed" bottom="1.5rem" left="0" right="0">
       <Container d="flex" flexDir="row" justify="space-around">
         {currentActions &&
           currentActions.map((action, index) => (
             <Button
-              h="2.5rem"
-              w="2.5rem"
+              h="3rem"
+              w="3rem"
               bg="white"
               shadow="3"
               hoverBg="info400"
@@ -73,7 +73,7 @@ export default function ActionBar() {
               {typeof action.icon === 'string' ? (
                 <Icon
                   name={action.icon}
-                  size="20px"
+                  size="1.5rem"
                   color={!!action.disabled ? 'light' : 'info700'}
                 />
               ) : (

@@ -49,7 +49,7 @@ export default function FeatsList() {
             textColor={selected.has(feat.date) ? 'white' : 'dark'}
             transition
           >
-            <Text>{feat.text}</Text>
+            <Text textSize="subheader">{feat.text}</Text>
           </Container>
         </Div>
       ))}

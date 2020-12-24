@@ -21,7 +21,7 @@ export default function ConfirmModal({
       rounded="lg"
     >
       <Div d="flex" m={{ b: '2em' }}>
-        <Text>{text}</Text>
+        <Text textSize="subheader">{text}</Text>
       </Div>
       <Div d="flex" justify="flex-end">
         <Button
@@ -30,10 +30,10 @@ export default function ConfirmModal({
           m={{ r: '1rem' }}
           onClick={onCancel || onClose}
         >
-          {cancelText}
+          <Text textSize="subheader">{cancelText}</Text>
         </Button>
         <Button bg={acceptBg} onClick={onAccept}>
-          {acceptText}
+          <Text textSize="subheader"> {acceptText}</Text>
         </Button>
       </Div>
     </Modal>
